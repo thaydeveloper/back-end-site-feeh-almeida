@@ -13,6 +13,9 @@ const schedulingSchema = new Schema({
   date: {
     type: String,
   },
+  day: {
+    type: Number,
+  },
   time: {
     type: Number,
   },
