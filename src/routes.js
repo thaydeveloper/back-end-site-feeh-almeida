@@ -6,12 +6,6 @@ const senhaJtw = require("../src/services/jwt");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-/* routes.get("/user/:id", async (req, res) => {
-  const user = await Scheduling.findOne(id);
-  console.log(user);
-  return res.send("tudo ok");
-}); */
-
 routes.post("/adm", async (req, res) => {
   try {
     const data = req.body;
