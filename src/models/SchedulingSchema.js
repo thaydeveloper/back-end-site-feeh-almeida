@@ -17,9 +17,12 @@ const schedulingSchema = new Schema({
     type: Number,
   },
   time: {
-    type: Number,
+    type: String,
   },
   services: {
+    type: String,
+  },
+  servicesAdditional: {
     type: String,
   },
 });

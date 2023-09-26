@@ -30,7 +30,8 @@ routes.post("/adm", async (req, res) => {
 routes.post("/scheduling", async (req, res) => {
   try {
     const data = req.body;
-    const { name, phone, time, date, services, id, day } = data;
+    const { name, phone, time, date, services, id, day, servicesAdditional } =
+      data;
     const user = await Scheduling.findOneAndUpdate(
       { id },
       {
@@ -39,6 +40,7 @@ routes.post("/scheduling", async (req, res) => {
         date,
         time,
         services,
+        servicesAdditional,
         day,
       },
       {
@@ -46,7 +48,7 @@ routes.post("/scheduling", async (req, res) => {
         returnDocument: "after",
       }
     );
-    console.log(user);
+
     res.status(200).json(user);
   } catch (error) {
     console.log("erro aqui---->", error);
