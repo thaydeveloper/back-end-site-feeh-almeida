@@ -30,8 +30,17 @@ routes.post("/adm", async (req, res) => {
 routes.post("/scheduling", async (req, res) => {
   try {
     const data = req.body;
-    const { name, phone, time, date, services, id, day, servicesAdditional } =
-      data;
+    const {
+      name,
+      phone,
+      time,
+      date,
+      services,
+      id,
+      day,
+      servicesAdditional,
+      durance,
+    } = data;
     const user = await Scheduling.findOneAndUpdate(
       { id },
       {
@@ -42,6 +51,7 @@ routes.post("/scheduling", async (req, res) => {
         services,
         servicesAdditional,
         day,
+        durance,
       },
       {
         upsert: true,

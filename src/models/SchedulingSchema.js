@@ -25,6 +25,9 @@ const schedulingSchema = new Schema({
   servicesAdditional: {
     type: String,
   },
+  durance: {
+    type: Array,
+  },
 });
 
 const Scheduling = mongoose.model("Scheduling", schedulingSchema);
